@@ -1,6 +1,10 @@
 # <span style="color: cyan;"> **Interacting With Remote Repositories** <span>
 
 ## <span style="color: cyan;"> *Setup* <span>
+Add SSH key to SSH Agent:
+* >ssh-add < path to private key > 
+    * Note: this does have to be done each time because the SSH Agent stores keys in memory.
+
 User Info (required info will be associated with commits):
 * >git config --global user.name "name" 
 * >git config --global user.email "email"
@@ -24,3 +28,18 @@ Connecting to Already Established Remote Repo:
     * Note: use this when local and remote branch are different.
 * >git push [alias] [brnach]
     * Note: use this when local and remote branch are the same. 
+
+## <span style="color: cyan;"> *Clean Up* <span>
+Delete It All ():
+* >ssh-add -D
+    * Note: removes all keys loaded in agent.
+* >rm ~/.gitconfig
+    * Note: deletes all global git preferences. 
+
+Delete Specific Entries:
+* >ssh-add -d < path to key >
+    * Note: removes specified key from agent.
+* >git config --global --unset < setting >
+    * Note: works well for user.name, user.email, and color.ui.
+* >git remote remove [alias]
+    * Note: using the delete all options above will not delete remote URLs configured locally. So run "git remote -v" and see which URLs you have configured and their cooresponding alias to remove with this command. 
