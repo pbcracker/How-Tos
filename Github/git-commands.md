@@ -16,6 +16,11 @@ Connecting to Already Established Remote Repo:
     * Note: displays branches (* will be next to the active branch).
 * >git add [file]
     * Note: ads file as it appears now to the next commit stage ('.' captures the entire directory).
+* >git commit -m < "Comment">
+    * Note: commit must be done before pushing. Make comment applicable to the chnages made.
 
 ## <span style="color: cyan;"> *Commit to Remote Repo* <span>
 * >git push [alias] [local]:[remote]
+    * Note: use this when local and remote branch are different.
+* >git push [alias] [brnach]
+    * Note: use this when local and remote branch are the same. 
